@@ -19,7 +19,7 @@ let planets = [
     {name: "Jupiter", moons: 67},
     {name: "Saturn", moons: 62},
     {name: "Uranus", moons: 27},
-    {name: "Uranus", moons: 14}
+    {name: "Neptune", moons: 14}
 ];
 
 const listPlanets = document.querySelector('.listPlanets');
@@ -37,3 +37,32 @@ planets.forEach(planet => {
         planetDiv.appendChild(moonDiv);
     }
 });
+
+//animation property accepts four values:
+//bounce - a custom animation name.
+//2s - duration of the animation. In this case, the animation will run for 2 seconds.
+//ease-in-out - specifies the timing function to be used for the animation.
+//It determines how fast the animation progresses at different points within the
+//animation. The ease-in-out function starts slow, speeds up in the middle, and
+//slows down again at the end. This gives the animation a more natural feel.
+//infinite alternate - specifies the number of times the animation should repeat
+//and the direction of the animation. infinite means the animation will repeat
+//indefinitely, and alternate means that the animation will reverse direction on
+//every other cycle. This creates the bouncing effect.
+//instead of ease-in-out. Here are a few examples:
+// ease-in: The animation starts slowly and speeds up towards the end.
+// ease-out: The animation starts quickly and slows down towards the end.
+// linear: The animation progresses at a constant rate from beginning to end.
+// steps(n): The animation jumps in n steps between the starting and ending points.
+// cubic-bezier(x1, y1, x2, y2): A custom timing function
+// that allows you to specify the speed of the animation at different points in time.
+// CSS animation alternatives to infinite alternate:
+// infinite: The animation repeats indefinitely without reversing.
+// forwards: The animation retains the styles applied in the last keyframe after
+// it completes.
+// backwards: The animation applies the styles from the first keyframe before the
+// animation starts.
+// both: The animation applies both forwards and backwards styles.
+// 3s: The animation runs for a specified duration of time before ending.
+// 2s ease-in-out: The animation uses a different timing function or duration
+// than ease-in-out.
