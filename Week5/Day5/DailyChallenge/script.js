@@ -15,7 +15,7 @@
    if (newTaskText === '') {
      return;
    }
- 
+   
    // Create a new task object
    const newTask = {
      task_id: tasks.length,
