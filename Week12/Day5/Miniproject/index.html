@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special To Do List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        color: #444;
+        text-align: center;
+      }
+
+      form {
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+
+      button {
+        background-color: #80cbc4;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      button:hover {
+        background-color: #66aaa1;
+      }
+
+      h2 {
+        color: #444;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      strong {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Special To-Do List</h1>
+    <form id="task-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+      <label for="description">Description:</label>
+      <textarea id="description"></textarea>
+      <label for="start-date">Start Date and Time:</label>
+      <input type="datetime-local" id="start-date" required />
+      <label for="end-date">End Date and Time:</label>
+      <input type="datetime-local" id="end-date" required />
+      <button type="submit">Add Task</button>
+    </form>
+
+    <h2>Task List</h2>
+    <ul id="task-list"></ul>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const taskForm = document.getElementById("task-form");
+        const taskList = document.getElementById("task-list");
+
+        taskForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const description = document.getElementById("description").value;
+          const startDate = new Date(
+            document.getElementById("start-date").value
+          );
+          const endDate = new Date(document.getElementById("end-date").value);
+          const isCompleted = false;
+
+          const task = {
+            name: name,
+            description: description,
+            startDate: startDate,
+            endDate: endDate,
+            isCompleted: isCompleted,
+          };
+
+          // Get existing tasks from localStorage
+          let tasks = localStorage.getItem("tasks");
+          tasks = tasks ? JSON.parse(tasks) : [];
+
+          // Add new task to the array
+          tasks.push(task);
+
+          // Save updated tasks to localStorage
+          localStorage.setItem("tasks", JSON.stringify(tasks));
+
+          // Clear form inputs
+          taskForm.reset();
+
+          // Update task list display
+          displayTasks();
+        });
+
+        // Function to display tasks
+        function displayTasks() {
+          taskList.innerHTML = ""; // Clear previous tasks
+
+          // Get tasks from localStorage
+          let tasks = localStorage.getItem("tasks");
+          tasks = tasks ? JSON.parse(tasks) : [];
+
+          // Iterate over tasks and create list items
+          tasks.forEach(function (task) {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `
+                        <strong>Name:</strong> ${task.name}<br>
+                        <strong>Start Date:</strong> ${task.startDate}<br>
+                        <strong>End Date:</strong> ${task.endDate}<br>
+                        <strong>Days Remaining:</strong> ${calculateDaysRemaining(
+                          new Date(task.endDate)
+                        )}<br>
+                    `;
+            taskList.appendChild(listItem);
+          });
+        }
+
+        // Function to calculate days remaining
+        function calculateDaysRemaining(endDate) {
+          const currentDate = new Date();
+          const remainingTime = endDate.getTime() - currentDate.getTime();
+          const daysRemaining = Math.ceil(
+            remainingTime / (1000 * 60 * 60 * 24)
+          );
+          return daysRemaining;
+        }
+
+        // Load and display tasks on page load
+        displayTasks();
+
+        console.log(localStorage.getItem("tasks"));
+      });
+    </script>
+  </body>
+</html>
