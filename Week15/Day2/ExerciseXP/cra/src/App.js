@@ -1,3 +1,5 @@
+// EXERCISE XP 
+
 // import React from "react" 
 // import {UserFavoriteAnimals} from "./components/FavoriteAnimals"
 
@@ -130,18 +132,33 @@
     //   return favorites.map((favorite, i) => <li key={i}>{favorite}</li>);
     // }
 
-// EXERCISE 4
+// XP EXERCISE 4
+
+// import React from "react" 
+// import {Exercise4} from "./components/Exercise4"
+
+// export const App = () => {
+//   return(
+//     <div>
+//       <Exercise4/> 
+//     </div>
+
+//   )
+ 
+// }
+
+
+// DAILY CHALLENGE 
 
 import React from "react" 
-import {Exercise4} from "./components/Exercise4"
+import {DemoCarousel} from "./components/DemoCarousel"
 
 export const App = () => {
   return(
     <div>
-      <Exercise4/> 
+      <DemoCarousel/> 
     </div>
 
   )
  
 }
-
