@@ -1,5 +1,7 @@
-import React from "react" 
-import {UserFavoriteAnimals} from "./components/FavoriteAnimals"
+// import React from "react" 
+// import {UserFavoriteAnimals} from "./components/FavoriteAnimals"
+
+
 
 // XP EXERCISE 1
 // function App(){
@@ -83,20 +85,20 @@ import {UserFavoriteAnimals} from "./components/FavoriteAnimals"
 
 // PART 3
 
-export default function App() {
-  const user = {
-    firstName: 'Bob',
-    lastName: 'Dylan',
-    favAnimals : ['Horse','Turtle','Elephant','Monkey']
-  }
-  return (
-    <>
-    <h3>{user.firstName}</h3>
-    <h3>{user.lastName}</h3>
-    <UserFavoriteAnimals favorites = {user.favAnimals}/>
-    </>
-  )
-}
+// export default function App() {
+//   const user = {
+//     firstName: 'Bob',
+//     lastName: 'Dylan',
+//     favAnimals : ['Horse','Turtle','Elephant','Monkey']
+//   }
+//   return (
+//     <>
+//     <h3>{user.firstName}</h3>
+//     <h3>{user.lastName}</h3>
+//     <UserFavoriteAnimals favorites = {user.favAnimals}/>
+//     </>
+//   )
+// }
 
 
 // function UserFavoriteAnimals (props){
@@ -127,3 +129,19 @@ export default function App() {
     // const UserFavoriteAnimals = ({favorites}) => {
     //   return favorites.map((favorite, i) => <li key={i}>{favorite}</li>);
     // }
+
+// EXERCISE 4
+
+import React from "react" 
+import {Exercise4} from "./components/Exercise4"
+
+export const App = () => {
+  return(
+    <div>
+      <Exercise4/> 
+    </div>
+
+  )
+ 
+}
+
