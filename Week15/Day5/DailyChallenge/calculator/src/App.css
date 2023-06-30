@@ -1,0 +1,103 @@
+/* .calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type='number'],
+select {
+  padding: 8px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+}
+
+.result {
+  font-size: 20px;
+  margin-top: 20px;
+}
+ */
+body {
+  background-color: rgb(237, 227, 247);
+}
+ .calculator {
+  max-width: 700px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 180px;
+  padding: 20px;
+  background: linear-gradient(56deg, rgba(201,163,235,1) 0%, rgba(150,55,255,1) 100%);
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.calculator h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #420071;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.input-container input[type="number"],
+.input-container select {
+  margin: 0 10px;
+  padding: 12px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #420071;
+}
+
+.input-container button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #420071;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background-color: #7e1dc4;
+}
+
+
+.result {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #420071;
+}
