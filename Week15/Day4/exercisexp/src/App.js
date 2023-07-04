@@ -41,13 +41,26 @@
 
 // EXERCISE 4: COMPONENTDIDMOUNT
 
+// import React from 'react'
+// import {Color} from './components/color.js'
+
+// export function App() {
+//   return (
+//     <>
+//     <Color />
+//     </>
+//   )
+// }
+
+// DAILY CHALLENGE: VOTING APP
+
 import React from 'react'
-import {Color} from './components/color.js'
+import {Vote} from "./components/vote"
 
 export function App() {
   return (
     <>
-    <Color />
+    <Vote />
     </>
   )
 }
