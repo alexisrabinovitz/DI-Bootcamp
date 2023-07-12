@@ -243,34 +243,172 @@
 
 //FUNCTIONAL COMPONENTS:
 
-import React from 'react';
+// import React from 'react';
 
-function App() {
-  const handleClick = async () => {
-    const url = 'https://webhook.site/c22bf15a-d799-4882-9bb1-54e5cec3fd77';
-    try {
-      const body = {
-        key1: 'myusername',
-        email: 'mymail@gmail.com',
-        name: 'Isaac',
-        lastname: 'Doe',
-        age: 27
-      };
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-      };
-      const res = await fetch(url, options);
-      console.log('res:', res);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+// function App() {
+//   const handleClick = async () => {
+//     const url = 'https://webhook.site/c22bf15a-d799-4882-9bb1-54e5cec3fd77';
+//     try {
+//       const body = {
+//         key1: 'myusername',
+//         email: 'mymail@gmail.com',
+//         name: 'Isaac',
+//         lastname: 'Doe',
+//         age: 27
+//       };
+//       const options = {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(body)
+//       };
+//       const res = await fetch(url, options);
+//       console.log('res:', res);
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   };
 
-  return <button onClick={handleClick}>Post Data</button>;
-}
+//   return <button onClick={handleClick}>Post Data</button>;
+// }
+
+// export default App;
+
+// DAILY CHALLENGE WEEK16 DAY4 
+
+// import React from 'react'
+
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props)
+//     console.log(props)
+//   }
+//   async componentDidMount() {
+//     const url = 'http://localhost:3001/api/hello'
+//     try {
+//       const resText = await fetch(url)
+//       const res = await resText.text()
+//       console.log('res:', res)
+//     } catch (err) {
+//       console.error(err)
+//     }
+//   }
+//   render () {
+//     return <div>Hello</div>
+//   }
+// }
+
+// export default App
+
+// SECOND PART 
+
+// import React from 'react'
+
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props)
+//     console.log(props)
+//     this.state = {message: null}
+//   }
+//   async componentDidMount() {
+//     const url = 'http://localhost:3001/api/hello'
+//     try {
+//       const resText = await fetch(url)
+//       const res = await resText.text()
+//       this.setState({message: res})
+//     } catch (err) {
+//       console.error(err)
+//     }
+//   }
+//   render () {
+//     return <div>Message: {this.state.message}</div>
+//   }
+// }
+
+// export default App
+
+// FUNCTIONAL COMPONENT
+
+// import React, { useEffect, useState } from 'react';
+
+// function App() {
+//   const [message, setMessage] = useState(null);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       const url = 'http://localhost:3001/api/hello';
+//       try {
+//         const resText = await fetch(url);
+//         const res = await resText.text();
+//         setMessage(res);
+//       } catch (err) {
+//         console.error(err);
+//       }
+//     };
+
+//     fetchData();
+//   }, []);
+
+//   return <div>Message: {message}</div>;
+// }
+
+// export default App;
+
+// PART 2 - CREATING FORM 
+
+// import React from "react";
+// import { UserForm } from "./components/UserForm";
+
+// export default class App extends React.Component {
+//     constructor(props) {
+//         super(props);
+//        this.state = { message: null }; 
+//     }
+    
+//     async componentDidMount() {
+//         const url = "http://localhost:3001/api/hello";
+//         try {
+//             const resText = await fetch(url);
+//             const res = await resText.text();
+//             this.setState({ message: res });
+//         } catch (err) {
+//             console.error(err)
+//         }
+//     }
+//     render() {
+//         return (
+//             <>
+//             <UserForm setMessage={message => this.setState({ message })}/>
+//             <div>Message: {this.state.message}</div>
+//             </>
+//         );
+//     }
+//   }
+
+
+// // REFACTORED INTO FUNCTiONAL COMPONENT
+
+
+import React, { useState, useEffect } from "react";
+import { UserForm } from "./components/UserForm";
+
+export const App = () => {
+  const [message, setMessage] = useState(null);
+
+  useEffect(() => {
+    const url = "http://localhost:3001/api/hello";
+    fetch(url)
+      .then(res => res.text())
+      .then(res => setMessage(res));
+  }, []);
+
+  return (
+    <>
+      <UserForm setMessage={setMessage} />
+      <div>Message: {message}</div>
+    </>
+  );
+};
 
 export default App;
