@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+/* 
+.App {
+  font-family: sans-serif;
+  text-align: center;
+} */
