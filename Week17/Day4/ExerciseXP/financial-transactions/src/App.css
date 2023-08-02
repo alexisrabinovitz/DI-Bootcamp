@@ -1,0 +1,94 @@
+/* Reset some default styles for better consistency */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f4fd; /* Pastel background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Center content vertically */
+}
+
+.container {
+  max-width: 800px;
+  padding: 20px;
+  background-color: #ffffff; /* White background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #a65bce; /* Blue header color */
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.transaction-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0; /* Light gray line between transactions */
+}
+
+.transaction-item:last-child {
+  border-bottom: none; /* Remove the bottom border from the last transaction */
+}
+
+.transaction-item .name {
+  flex: 1;
+  font-size: 18px;
+  color: #333333;
+}
+
+.transaction-item .amount {
+  font-size: 18px;
+  color: #333333;
+}
+
+.transaction-form {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.transaction-input {
+  padding: 20px;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.transaction-button {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff; /* Blue button background color */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.transaction-button:hover {
+  background-color: #0056b3; /* Darker blue shade on button hover */
+}
