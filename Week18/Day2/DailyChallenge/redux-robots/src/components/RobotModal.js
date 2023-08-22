@@ -21,3 +21,4 @@ function RobotModal({ id, name, email, onClose }) {
 
 export default RobotModal;
 
+  

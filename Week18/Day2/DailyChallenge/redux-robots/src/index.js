@@ -15,10 +15,10 @@ root.render(
   </React.StrictMode>
 );
 
-
+   
 
 // npm install @reduxjs/toolkit react-redux
-
+  
 
 
 // // index.js (Functional Component without Redux) 1
